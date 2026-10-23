@@ -1,0 +1,267 @@
+/* Kerangka: header, navigasi, halaman (view), kartu. */
+
+.wrap {
+  width: min(100% - 32px, 1040px);
+  margin-inline: auto;
+}
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 8px 0;
+  padding-top: max(8px, env(safe-area-inset-top));
+  color: black;
+  background-color: rgba(138, 211, 254, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.top-row {
+  width: min(100% - 32px, 1180px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.brand img {
+  display: block;
+  height: 68px;      /* hampir setinggi header */
+  width: auto;       /* proporsi asli, tidak gepeng */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 520px) {
+  .brand img { height: 52px; }
+}
+
+.brand h1 {
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.tagline {
+  display: none; /* subjudul tampil di hero Home */
+  margin: 2px 0 0;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.top .btn.ghost {
+  color: var(--ink);
+  border-color: var(--line);
+  white-space: nowrap;
+}
+
+main {
+  padding: 20px 0 8px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.card[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.view {
+  display: grid;
+  gap: 18px;
+  width: min(100%, 1040px);
+  margin-inline: auto;
+}
+
+.view[hidden] {
+  display: none;
+}
+
+.view[data-view="kalkulator"] {
+  width: 100%;
+}
+
+main:focus {
+  outline: none;
+}
+
+#nav {
+  display: flex;
+  gap: 25px;
+  margin-inline: auto;
+  margin-right: 0.1px;
+}
+
+#nav a {
+  padding: 8px 18px;
+  border-radius: 90px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#nav a:hover {
+  background: white;
+  color: rgb(51, 150, 211);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+a[aria-current="page"]:not(.btn) {
+  background: white;
+  color: rgba(186, 230, 255, 0.75);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3)
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  #nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    margin: 0;
+    padding-bottom: 2px;
+  }
+}
+
+/* Tombol bahasa ID / EN: bahasa aktif ditebalkan */
+#lang-btn {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#lang-btn span {
+  opacity: .55;
+}
+
+#lang-btn .on {
+  opacity: 1;
+  font-weight: 800;
+}
+
+/* Lebar main tetap (agar transisi halus); tiap halaman membatasi lebarnya sendiri. Kalkulator hampir selebar layar. */
+main.wrap {
+  width: min(100% - 32px, 1600px);
+}
+
+/* ===== Transisi antarhalaman ===== */
+
+/* Isi halaman baru muncul bergantian: blok ganjil turun dari atas, blok genap naik dari bawah.
+   Aktif lewat kelas .rise dari router.js (dipasang tiap kali menu diklik). */
+@keyframes reveal-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise .view:not([hidden]) > *,
+.rise #edu > * {
+  animation: reveal-from-top .7s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+
+.rise .view:not([hidden]) > :nth-child(even),
+.rise #edu > :nth-child(even) {
+  animation-name: reveal-from-bottom;
+}
+
+.rise .view:not([hidden]) > :nth-child(2),
+.rise #edu > :nth-child(2) {
+  animation-delay: .1s;
+}
+
+.rise .view:not([hidden]) > :nth-child(3),
+.rise #edu > :nth-child(3) {
+  animation-delay: .2s;
+}
+
+.rise .view:not([hidden]) > :nth-child(4),
+.rise #edu > :nth-child(4) {
+  animation-delay: .3s;
+}
+
+.rise .view:not([hidden]) > :nth-child(n + 5),
+.rise #edu > :nth-child(n + 5) {
+  animation-delay: .4s;
+}
+
+/* Judul di dalam halaman ikut turun dari atas, teks/paragraf naik dari bawah */
+.rise .view:not([hidden]) :is(h2, .hero h1, .hero-text > h2) {
+  animation: reveal-from-top .8s cubic-bezier(.2, .8, .2, 1) .15s backwards;
+}
+
+.rise .view:not([hidden]) .hero-text > p {
+  animation: reveal-from-bottom .8s cubic-bezier(.2, .8, .2, 1) .3s backwards;
+}
+
+/* Halaman selain Home: isi di dalam kartu (judul, paragraf, kolom isian, tombol, daftar) ikut muncul
+   bergantian dari atas dan bawah sehingga seluruh halaman bertransisi seperti Home. */
+.rise .view:not([data-view="home"]):not([hidden]) .card :is(h2, h3, p, .field, .switch, .actions, .hint, li, .tbl-wrap) {
+  animation: reveal-from-top .7s cubic-bezier(.2, .8, .2, 1) .25s backwards;
+}
+
+.rise .view:not([data-view="home"]):not([hidden]) .card :is(h2, h3, p, .field, .switch, .actions, .hint, li, .tbl-wrap):nth-child(even) {
+  animation-name: reveal-from-bottom;
+}
+
+.rise .view:not([data-view="home"]):not([hidden]) .card :is(h2, h3, p, .field, .switch, .actions, .hint, li, .tbl-wrap):nth-child(3n) {
+  animation-delay: .35s;
+}
+
+.rise .view:not([data-view="home"]):not([hidden]) .card :is(h2, h3, p, .field, .switch, .actions, .hint, li, .tbl-wrap):nth-child(n + 4) {
+  animation-delay: .45s;
+}
+
+.rise #edu :is(article, .card, .art) :is(h2, h3, p, li, .chip, span) {
+  animation: reveal-from-bottom .7s cubic-bezier(.2, .8, .2, 1) .3s backwards;
+}
+
+.rise #edu .art-grid > * {
+  animation: reveal-from-top .7s cubic-bezier(.2, .8, .2, 1) .1s backwards;
+}
+
+.rise #edu .art-grid > :nth-child(even) {
+  animation-name: reveal-from-bottom;
+}
+
+.rise #edu .art-grid > :nth-child(n + 3) {
+  animation-delay: .25s;
+}
