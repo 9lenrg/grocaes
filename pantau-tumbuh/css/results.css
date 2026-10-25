@@ -1,0 +1,239 @@
+/* Hasil perhitungan, kurva, dan riwayat pengukuran. */
+
+.meta {
+  color: var(--muted);
+}
+
+.overall {
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.overall-label {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.level-0 {
+  --c: var(--l0);
+  --cb: var(--l0-bg);
+}
+
+.level-1 {
+  --c: var(--l1);
+  --cb: var(--l1-bg);
+}
+
+.level-2 {
+  --c: var(--l2);
+  --cb: var(--l2-bg);
+}
+
+.level-3 {
+  --c: var(--l3);
+  --cb: var(--l3-bg);
+}
+
+.level-na {
+  --c: var(--na);
+  --cb: var(--na-bg);
+}
+
+.overall,
+.ind {
+  background: var(--cb);
+  color: var(--c);
+}
+
+.overall p {
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.overall p:last-child {
+  margin: 0;
+}
+
+.overall .overall-label {
+  color: var(--c);
+}
+
+.incomplete {
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: var(--c);
+  color: var(--cb);
+  font-weight: 800;
+  font-size: .85em;
+}
+
+.ind-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (min-width: 640px) {
+  .ind-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ind {
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+}
+
+.ind h3 {
+  margin-bottom: 8px;
+}
+
+.abbr {
+  font-weight: 600;
+  font-size: .8rem;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.status {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.z {
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.desc {
+  color: var(--ink);
+  opacity: .78;
+  font-size: .85rem;
+  margin: 0;
+}
+
+.chart-h {
+  margin: 22px 0 8px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  font: inherit;
+  font-weight: 700;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tab[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.c-bg {
+  fill: var(--bg);
+}
+
+.c-grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.c-tick,
+.c-axis,
+.c-zlabel {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.c-axis {
+  font-size: 12px;
+}
+
+.c-curve {
+  stroke-width: 1.6;
+}
+
+.c-z0 {
+  stroke: var(--accent);
+  stroke-width: 2.4;
+}
+
+.c-zp2,
+.c-zn2 {
+  stroke: var(--l1);
+  stroke-dasharray: 6 4;
+}
+
+.c-zp3,
+.c-zn3 {
+  stroke: var(--l3);
+  stroke-dasharray: 2 4;
+}
+
+.c-point {
+  fill: var(--ink);
+  stroke: var(--bg);
+  stroke-width: 3;
+}
+
+.c-pointlabel {
+  fill: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.save-msg {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.disclaimer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+.hist-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 4px;
+}
+
+.hist-head h2 {
+  margin: 0;
+}

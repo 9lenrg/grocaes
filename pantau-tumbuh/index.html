@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GROCAES</title>
+  <meta name="description" content="Skrining awal pertumbuhan anak 0–5 tahun berdasarkan standar WHO. Berjalan di peramban, dapat digunakan secara luring, dan data tidak dikirim ke peladen.">
+  <meta name="theme-color" content="#1f6b4f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="logofix.png" type="image/png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Lewati ke konten utama</a>
+
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="#/home">
+        <h1 class="sr-only" data-i18n="app.title">GROCAES</h1>
+        <img src="logofix.png" alt="GROCAES" width="1106" height="344">
+      </a>
+
+      <nav id="nav" aria-label="Menu utama">
+        <a href="#/home" data-route="home" data-i18n="nav.home">Beranda</a>
+        <a href="#/kalkulator" data-route="kalkulator" data-i18n="nav.calc">Kalkulator Gizi</a>
+        <a href="#/edukasi" data-route="edukasi" data-i18n="nav.edu">Edukasi</a>
+        <a href="#/konsultasi" data-route="konsultasi" data-i18n="nav.consult">Konsultasi</a>
+        <a id="lang-btn" role="button" tabindex="0" aria-label="Change language / Ganti bahasa"></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <div class="view" data-view="home">
+      <section class="hero">
+        <div class="hero-text">
+          <h2 data-i18n="home.title">Pantau tumbuh kembang si kecil dengan tenang</h2>
+          <p data-i18n="home.text">Skrining status gizi anak 0–5 tahun berdasarkan standar WHO, lengkap dengan saran pola makan dan konsultasi daring.</p>
+        </div>
+
+        <div class="cover">
+          <img src="cover.jpeg" width="612" height="383" alt="Ilustrasi keluarga makan bersama di meja makan" data-i18n-alt="cover.alt">
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="st-what-h">
+        <h2 id="st-what-h" data-i18n="stunting.what.t">Apa itu stunting?</h2>
+        <p data-i18n="stunting.what.d1"></p>
+        <p data-i18n="stunting.what.d2"></p>
+      </section>
+
+      <section class="card" aria-labelledby="st-signs-h">
+        <h2 id="st-signs-h" data-i18n="stunting.signs.t">Tanda-tanda anak mengalami stunting</h2>
+        <ul class="sign-list">
+          <li>
+            <span class="sign-icon" aria-hidden="true"><img src="img/tanda/tinggi.svg" alt="" width="64" height="64" loading="lazy"></span>
+            <span data-i18n="stunting.s1">…</span>
+          </li>
+
+          <li>
+            <span class="sign-icon" aria-hidden="true"><img src="img/tanda/berat.svg" alt="" width="64" height="64" loading="lazy"></span>
+            <span data-i18n="stunting.s2">…</span>
+          </li>
+
+          <li>
+            <span class="sign-icon" aria-hidden="true"><img src="img/tanda/wajah.svg" alt="" width="64" height="64" loading="lazy"></span>
+            <span data-i18n="stunting.s3">…</span>
+          </li>
+
+          <li>
+            <span class="sign-icon" aria-hidden="true"><img src="img/tanda/sakit.svg" alt="" width="64" height="64" loading="lazy"></span>
+            <span data-i18n="stunting.s4">…</span>
+          </li>
+
+          <li>
+            <span class="sign-icon" aria-hidden="true"><img src="img/tanda/belajar.svg" alt="" width="64" height="64" loading="lazy"></span>
+            <span data-i18n="stunting.s5">…</span>
+          </li>
+        </ul>
+        <p class="hint" data-i18n="stunting.signs.note"></p>
+      </section>
+
+      <section aria-labelledby="st-prev-h">
+        <div class="hist-head">
+          <h2 id="st-prev-h" data-i18n="stunting.prev.t">Cara pencegahan stunting</h2>
+        </div>
+        <div class="feat-grid prev-list">
+          <article class="card prev">
+            <span class="feat-icon" aria-hidden="true"><img src="img/asi.png" alt="" loading="lazy"></span>
+            <div>
+              <h3 data-i18n="stunting.p1.t"></h3>
+              <p data-i18n="stunting.p1.d"></p>
+            </div>
+          </article>
+
+          <article class="card prev">
+            <span class="feat-icon" aria-hidden="true"><img src="img/mpasi.png" alt="" loading="lazy"></span>
+            <div>
+              <h3 data-i18n="stunting.p2.t"></h3>
+              <p data-i18n="stunting.p2.d"></p>
+            </div>
+          </article>
+
+          <article class="card prev">
+            <span class="feat-icon" aria-hidden="true"><img src="img/imunisasi.png" alt="" loading="lazy"></span>
+            <div>
+              <h3 data-i18n="stunting.p3.t"></h3>
+              <p data-i18n="stunting.p3.d"></p>
+            </div>
+          </article>
+
+          <article class="card prev">
+            <span class="feat-icon" aria-hidden="true"><img src="img/pantau.png" alt="" loading="lazy"></span>
+            <div>
+              <h3 data-i18n="stunting.p4.t"></h3>
+              <p data-i18n="stunting.p4.d"></p>
+            </div>
+          </article>
+
+          <article class="card prev">
+            <span class="feat-icon" aria-hidden="true"><img src="img/air.png" alt="" loading="lazy"></span>
+            <div>
+              <h3 data-i18n="stunting.p5.t"></h3>
+              <p data-i18n="stunting.p5.d"></p>
+            </div>
+          </article>
+
+          <article class="card prev">
+            <span class="feat-icon" aria-hidden="true"><img src="img/hamil.png" alt="" loading="lazy"></span>
+            <div>
+              <h3 data-i18n="stunting.p6.t"></h3>
+              <p data-i18n="stunting.p6.d"></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card about" aria-labelledby="about-h">
+        <h2 id="about-h" data-i18n="about.title">Tentang</h2>
+        <p data-i18n="about.text"></p>
+      </section>
+    </div>
+
+    <div class="view" data-view="kalkulator" hidden>
+    <div id="banner" class="banner" role="alert" hidden data-i18n="banner.nodata"></div>
+
+    <section class="card" aria-labelledby="form-h">
+      <h2 id="form-h" data-i18n="form.title">Data anak</h2>
+      <form id="form" novalidate autocomplete="off">
+        <div class="field">
+          <label for="name" data-i18n="form.name">Nama (opsional)</label>
+          <input id="name" name="name" type="text" maxlength="60" autocomplete="off" data-i18n-placeholder="form.name.ph">
+        </div>
+
+        <fieldset class="field">
+          <legend data-i18n="form.sex">Jenis kelamin</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="sex" value="m" required> <span data-i18n="form.sex.m">Laki-laki</span></label>
+            <label class="choice"><input type="radio" name="sex" value="f" required> <span data-i18n="form.sex.f">Perempuan</span></label>
+          </div>
+        </fieldset>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="birth" data-i18n="form.birth">Tanggal lahir</label>
+            <input id="birth" name="birth" type="date" required>
+          </div>
+          <div class="field">
+            <label for="measure" data-i18n="form.measure">Tanggal pengukuran</label>
+            <input id="measure" name="measure" type="date" required>
+          </div>
+          <p id="age-out" class="age-out" role="status" aria-live="polite" hidden></p>
+          <div class="field">
+            <label for="weight" data-i18n="form.weight">Berat badan (kg)</label>
+            <input id="weight" name="weight" type="number" inputmode="decimal" step="0.01" min="0.5" max="30" required>
+          </div>
+          <div class="field">
+            <label for="length" data-i18n="form.length">Panjang/tinggi badan (cm)</label>
+            <input id="length" name="length" type="number" inputmode="decimal" step="0.1" min="35" max="135" required>
+            <p class="hint" data-i18n="form.length.hint"></p>
+          </div>
+        </div>
+
+        <fieldset class="field">
+          <legend data-i18n="form.position">Cara pengukuran</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio" name="position" value="lying" checked>
+              <span data-i18n="form.pos.lying">Berbaring (panjang badan)</span>
+            </label>
+
+            <label class="choice">
+              <input type="radio" name="position" value="standing">
+              <span data-i18n="form.pos.standing">Berdiri (tinggi badan)</span>
+            </label>
+          </div>
+          <p class="hint" data-i18n="form.position.hint"></p>
+        </fieldset>
+
+        <div id="errors" class="errors" role="alert" hidden></div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" data-i18n="form.submit">Hitung status gizi</button>
+          <button type="reset" class="btn ghost" id="reset-btn" data-i18n="form.reset">Kosongkan</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="card" aria-live="polite" tabindex="-1" hidden></section>
+    <section id="diet" class="card diet" hidden></section>
+
+    </div>
+
+    <div class="view" data-view="edukasi" hidden>
+      <section id="edu-head" class="card edu-head">
+        <h2 data-i18n="edu.title">Edukasi</h2>
+        <p data-i18n="edu.intro">Informasi singkat seputar gizi, MPASI, dan tumbuh kembang anak.</p>
+      </section>
+      <div id="edu"></div>
+    </div>
+
+    <div class="view" data-view="konsultasi" hidden>
+      <section class="card edu-head" aria-labelledby="cons-h">
+        <h2 id="cons-h" data-i18n="consult.title">Konsultasi daring</h2>
+        <p><span data-i18n="consult.hours">Jam layanan</span>: <span id="consult-hours"></span>. <span data-i18n="consult.privacy"></span></p>
+      </section>
+
+      <section class="card">
+        <form id="consult-form" novalidate autocomplete="off">
+          <div class="grid2">
+            <div class="field">
+              <label for="c-who" data-i18n="consult.who">Nama Anda</label>
+              <input id="c-who" name="who" type="text" maxlength="60" required>
+            </div>
+
+            <div class="field">
+              <label for="c-age" data-i18n="consult.age">Usia anak (opsional)</label>
+              <input id="c-age" name="age" type="text" maxlength="30" placeholder="mis. 14 bulan" data-i18n-placeholder="consult.age_ph">
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-topic" data-i18n="consult.topic">Topik</label>
+            <select id="c-topic" name="topic">
+              <option data-i18n="consult.t1">Hasil kalkulator gizi</option>
+              <option data-i18n="consult.t2">Pola makan / MPASI</option>
+              <option data-i18n="consult.t3">Anak sulit makan</option>
+              <option data-i18n="consult.t4">Berat badan tidak naik</option>
+              <option data-i18n="consult.t5">Lainnya</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="c-msg" data-i18n="consult.msg">Pertanyaan</label>
+            <textarea id="c-msg" name="msg" rows="4" maxlength="800" required></textarea>
+          </div>
+
+          <div class="field">
+            <label data-i18n="consult.last">Riwayat pengukuran terakhir (opsional)</label>
+            <label class="switch">
+              <input type="checkbox" name="attach">
+              <span data-i18n="consult.attach">Sertakan hasil pengukuran terakhir dari riwayat (termasuk nama anak)</span>
+            </label>
+          </div>
+
+            <div class="actions">
+              <button type="button" class="btn primary" id="send-wa" data-i18n="consult.wa">Kirim pesan</button>
+            </div>
+          <p id="consult-note" class="hint" role="status"></p>
+        </form>
+      </section>
+
+      <section class="card diet-alert"><h3 data-i18n="consult.emerg_t">Jangan tunggu balasan bila darurat</h3><p data-i18n="consult.emerg_d">Bila anak lemas, sulit bangun, muntah atau diare terus-menerus, atau tampak dehidrasi, segera ke IGD atau puskesmas terdekat. Konsultasi daring tidak untuk keadaan darurat.</p></section>
+    </div>
+  </main>
+
+  <dialog id="hist-dialog" class="hist-dialog" aria-labelledby="hd-title">
+    <div id="hist-detail"></div>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
